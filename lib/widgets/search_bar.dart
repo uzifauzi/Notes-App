@@ -13,7 +13,7 @@ class SearchNoteBar extends StatelessWidget {
       child: TextField(
         decoration: InputDecoration(
           hintText: 'Search',
-          hintStyle: GoogleFonts.nunitoSans(),
+          hintStyle: Theme.of(context).textTheme.labelMedium,
           prefixIcon: const Icon(Icons.search),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8.0),

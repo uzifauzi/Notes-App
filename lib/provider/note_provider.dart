@@ -12,4 +12,13 @@ class NoteNotifier extends StateNotifier<List<Note>> {
     final notes = notePersons.values.toList();
     state = notes;
   }
+
+  void addNotes(Note note) {
+    notePersons.put(note.title, note);
+    loadNotes();
+  }
 }
+
+final noteListProvider = StateNotifierProvider<NoteNotifier, List<Note>>((ref) {
+  return NoteNotifier();
+});
