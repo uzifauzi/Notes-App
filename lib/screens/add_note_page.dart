@@ -53,10 +53,7 @@ class _AddNotePageState extends ConsumerState<AddNotePage> {
                   color: Colors.grey,
                 ),
               ),
-              style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
+              style: Theme.of(context).textTheme.titleMedium,
             ),
             const SizedBox(height: 16),
             Expanded(

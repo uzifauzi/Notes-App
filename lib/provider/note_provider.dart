@@ -17,6 +17,16 @@ class NoteNotifier extends StateNotifier<List<Note>> {
     notePersons.put(note.title, note);
     loadNotes();
   }
+
+  void deleteNote(String title) {
+    notePersons.delete(title);
+    loadNotes();
+  }
+
+  void updateNote(Note updatedNote) {
+    notePersons.put(updatedNote.title, updatedNote);
+    loadNotes();
+  }
 }
 
 final noteListProvider = StateNotifierProvider<NoteNotifier, List<Note>>((ref) {
