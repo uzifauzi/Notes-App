@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:notes_app/provider/note_provider.dart';
 import 'package:notes_app/screens/edit_note_page.dart';
 import '../models/note.dart';
@@ -19,8 +20,7 @@ class NoteDetailPage extends ConsumerWidget {
             onSelected: (value) {
               if (value == 'Delete') {
                 ref.read(noteListProvider.notifier).deleteNote(note.title);
-                Navigator.pop(
-                    context); // Kembali ke halaman utama setelah menghapus
+                context.go('/');
               } else if (value == 'Edit') {
                 Navigator.push(
                   context,
@@ -60,7 +60,7 @@ class NoteDetailPage extends ConsumerWidget {
           children: [
             Text(
               note.title,
-              style: Theme.of(context).textTheme.titleMedium,
+              style: Theme.of(context).textTheme.headlineSmall,
             ),
             const SizedBox(height: 16),
             Text(

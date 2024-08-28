@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/screens/detail_note_page.dart';
+import 'package:go_router/go_router.dart';
 
 import '../models/note.dart';
 
@@ -12,11 +12,9 @@ class NoteCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => NoteDetailPage(note: note),
-            ));
+        context.goNamed('noteDetail', pathParameters: {
+          'title': note.title,
+        });
       },
       child: Container(
         padding: const EdgeInsets.all(10.0),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:notes_app/provider/note_provider.dart';
 
 import '../models/note.dart';
@@ -40,7 +41,7 @@ class _EditNotePageState extends ConsumerState<EditNotePage> {
     );
 
     ref.read(noteListProvider.notifier).updateNote(updatedNote);
-    Navigator.pop(context); // Kembali ke halaman detail setelah menyimpan
+    context.go('/');
   }
 
   @override
@@ -50,7 +51,7 @@ class _EditNotePageState extends ConsumerState<EditNotePage> {
         title: const Text('Edit Note'),
         actions: [
           IconButton(
-            icon: const Icon(Icons.save),
+            icon: const Icon(Icons.check),
             onPressed: _saveNote,
           ),
         ],
@@ -64,23 +65,21 @@ class _EditNotePageState extends ConsumerState<EditNotePage> {
               controller: titleController,
               decoration: const InputDecoration(
                 hintText: 'Title',
+                border: InputBorder.none,
               ),
-              style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
+              style: Theme.of(context).textTheme.titleMedium,
             ),
             const SizedBox(height: 16),
-            TextField(
-              controller: contentController,
-              decoration: const InputDecoration(
-                hintText: 'Content',
+            Expanded(
+              child: TextField(
+                controller: contentController,
+                decoration: const InputDecoration(
+                  hintText: 'Start typing...',
+                  border: InputBorder.none,
+                ),
+                maxLines: null, // Makes the text field grow with content
+                keyboardType: TextInputType.multiline,
               ),
-              style: const TextStyle(
-                fontSize: 18,
-                height: 1.5,
-              ),
-              maxLines: null,
             ),
           ],
         ),

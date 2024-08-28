@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:notes_app/screens/home_page.dart';
+import 'package:notes_app/routes/router.dart';
 import 'package:notes_app/themes/text_theme.dart';
 
 import 'services/note_boxes.dart';
@@ -16,14 +16,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: router,
       title: 'Notely',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
         textTheme: myTextTheme,
       ),
-      home: const HomePage(),
     );
   }
 }

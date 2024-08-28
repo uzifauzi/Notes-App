@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:notes_app/provider/note_provider.dart';
 import '../widgets/note_card.dart';
 import '../widgets/search_bar.dart';
-import 'add_note_page.dart';
 
 class HomePage extends ConsumerWidget {
   const HomePage({super.key});
@@ -53,10 +53,7 @@ class HomePage extends ConsumerWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const AddNotePage()),
-          );
+          context.go('/add');
         },
         child: const Icon(Icons.add),
       ),

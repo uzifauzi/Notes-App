@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:notes_app/provider/note_provider.dart';
 
 import '../models/note.dart';
@@ -23,7 +24,7 @@ class _AddNotePageState extends ConsumerState<AddNotePage> {
     );
 
     ref.read(noteListProvider.notifier).addNotes(note);
-    Navigator.pop(context);
+    context.go('/');
   }
 
   @override
@@ -65,6 +66,7 @@ class _AddNotePageState extends ConsumerState<AddNotePage> {
                 ),
                 maxLines: null, // Makes the text field grow with content
                 keyboardType: TextInputType.multiline,
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
             ),
           ],
