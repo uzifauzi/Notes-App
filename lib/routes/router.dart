@@ -34,6 +34,7 @@ final GoRouter router = GoRouter(
           },
         ),
         GoRoute(
+          name: 'edit',
           path: 'edit/:title',
           builder: (context, state) {
             final String title = state.pathParameters['title']!;

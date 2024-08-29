@@ -27,6 +27,17 @@ class NoteNotifier extends StateNotifier<List<Note>> {
     notePersons.put(updatedNote.title, updatedNote);
     loadNotes();
   }
+
+  void searchNoteByTitle(String query) {
+    if (query.isEmpty) {
+      loadNotes(); // Jika query kosong, kembalikan semua note
+    } else {
+      state = notePersons.values
+          .where(
+              (note) => note.title.toLowerCase().contains(query.toLowerCase()))
+          .toList();
+    }
+  }
 }
 
 final noteListProvider = StateNotifierProvider<NoteNotifier, List<Note>>((ref) {

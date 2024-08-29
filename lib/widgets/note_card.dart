@@ -12,6 +12,7 @@ class NoteCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        FocusScope.of(context).unfocus();
         context.goNamed('noteDetail', pathParameters: {
           'title': note.title,
         });
