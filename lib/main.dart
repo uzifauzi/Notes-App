@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:notes_app/routes/router.dart';
-import 'package:notes_app/themes/text_theme.dart';
+import 'package:notes_app/themes/theme.dart';
 
 import 'services/note_boxes.dart';
 
@@ -19,11 +19,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       routerConfig: router,
       title: 'Notely',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-        textTheme: myTextTheme,
-      ),
+      theme: lightMode,
+      darkTheme: darkMode,
     );
   }
 }

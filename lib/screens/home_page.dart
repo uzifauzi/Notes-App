@@ -18,7 +18,7 @@ class HomePage extends ConsumerWidget {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).colorScheme.primary,
         appBar: AppBar(
           title:
               Text('Notely', style: Theme.of(context).textTheme.headlineMedium),
