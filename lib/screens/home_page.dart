@@ -20,13 +20,17 @@ class HomePage extends ConsumerWidget {
       child: Scaffold(
         backgroundColor: Theme.of(context).colorScheme.primary,
         appBar: AppBar(
-          title:
-              Text('Notely', style: Theme.of(context).textTheme.headlineMedium),
-          backgroundColor: Colors.white,
+          title: Text('Notely',
+              style: Theme.of(context)
+                  .textTheme
+                  .headlineMedium!
+                  .copyWith(color: Theme.of(context).colorScheme.onPrimary)),
+          // backgroundColor: Colors.white,
           elevation: 0,
           actions: [
             IconButton(
-              icon: const Icon(Icons.more_vert, color: Colors.black),
+              icon: Icon(Icons.more_vert,
+                  color: Theme.of(context).colorScheme.onPrimary),
               onPressed: () {},
             ),
           ],
@@ -57,10 +61,12 @@ class HomePage extends ConsumerWidget {
           ),
         ),
         floatingActionButton: FloatingActionButton(
+          backgroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
           onPressed: () {
             context.go('/add');
           },
-          child: const Icon(Icons.add),
+          child:
+              Icon(Icons.add, color: Theme.of(context).colorScheme.onPrimary),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       ),

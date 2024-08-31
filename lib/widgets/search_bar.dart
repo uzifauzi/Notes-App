@@ -32,8 +32,12 @@ class _SearchNoteBarState extends ConsumerState<SearchNoteBar> {
           focusNode: _focusNode,
           decoration: InputDecoration(
             hintText: 'Search',
-            hintStyle: Theme.of(context).textTheme.labelMedium,
-            prefixIcon: const Icon(Icons.search),
+            hintStyle: Theme.of(context)
+                .textTheme
+                .labelMedium!
+                .copyWith(color: Theme.of(context).colorScheme.onSecondary),
+            prefixIcon: Icon(Icons.search,
+                color: Theme.of(context).colorScheme.onSecondary),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8.0),
               borderSide: BorderSide.none,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:notes_app/provider/note_provider.dart';
+import 'package:notes_app/widgets/delete_dialog.dart';
 import '../models/note.dart';
 
 class NoteDetailPage extends ConsumerWidget {
@@ -23,8 +23,9 @@ class NoteDetailPage extends ConsumerWidget {
             PopupMenuButton<String>(
               onSelected: (value) {
                 if (value == 'Delete') {
-                  ref.read(noteListProvider.notifier).deleteNote(note.title);
-                  context.go('/');
+                  showDialog(
+                      context: context,
+                      builder: (context) => DeleteDialog(note: note));
                 } else if (value == 'Edit') {
                   context.goNamed('edit', pathParameters: {
                     'title': note.title,
@@ -61,15 +62,12 @@ class NoteDetailPage extends ConsumerWidget {
             children: [
               Text(
                 note.title,
-                style: Theme.of(context).textTheme.headlineSmall,
+                style: Theme.of(context).textTheme.titleLarge,
               ),
               const SizedBox(height: 16),
               Text(
                 note.content,
-                style: const TextStyle(
-                  fontSize: 18,
-                  height: 1.5,
-                ),
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
             ],
           ),

@@ -45,6 +45,7 @@ class _AddNotePageState extends ConsumerState<AddNotePage> {
           children: [
             TextField(
               controller: titleController,
+              cursorColor: Theme.of(context).colorScheme.secondary,
               decoration: const InputDecoration(
                 hintText: 'Untitled',
                 border: InputBorder.none,
@@ -60,6 +61,7 @@ class _AddNotePageState extends ConsumerState<AddNotePage> {
             Expanded(
               child: TextField(
                 controller: contentController,
+                cursorColor: Theme.of(context).colorScheme.secondary,
                 decoration: const InputDecoration(
                   hintText: 'Start typing...',
                   border: InputBorder.none,

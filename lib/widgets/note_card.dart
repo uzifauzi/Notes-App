@@ -20,7 +20,7 @@ class NoteCard extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(10.0),
         decoration: BoxDecoration(
-          color: Colors.deepPurple[100],
+          color: Theme.of(context).colorScheme.onPrimaryContainer,
           borderRadius: BorderRadius.circular(10.0),
         ),
         child: Column(
@@ -28,7 +28,10 @@ class NoteCard extends StatelessWidget {
           children: [
             Text(
               note.title,
-              style: Theme.of(context).textTheme.titleSmall,
+              style: Theme.of(context)
+                  .textTheme
+                  .titleMedium
+                  ?.copyWith(color: Theme.of(context).colorScheme.onPrimary),
             )
           ],
         ),
