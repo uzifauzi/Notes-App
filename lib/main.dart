@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:notes_app/routes/router.dart';
 import 'package:notes_app/themes/theme.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'services/note_boxes.dart';
 
@@ -17,10 +18,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      routerConfig: router,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       title: 'Notely',
       theme: lightMode,
       darkTheme: darkMode,
+      routerConfig: router,
     );
   }
 }

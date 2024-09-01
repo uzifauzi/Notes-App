@@ -1,0 +1,8 @@
+{
+    "searchTitle": "Search",
+    "editNoteTitle": "Edit Note",
+    "deleteNoteTitle": "Delete Note",
+    "deleteConfirmation": "Are you sure want to delete this note?",
+    "confirmDelete": "Delete",
+    "cancel": "No"
+}

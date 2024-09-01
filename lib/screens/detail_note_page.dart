@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:notes_app/widgets/delete_dialog.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import '../models/note.dart';
 
 class NoteDetailPage extends ConsumerWidget {
@@ -33,21 +35,21 @@ class NoteDetailPage extends ConsumerWidget {
                 }
               },
               itemBuilder: (context) => [
-                const PopupMenuItem(
+                PopupMenuItem(
                   value: 'Edit',
                   child: Row(
                     children: [
-                      Icon(Icons.edit),
-                      Text('Edit Note'),
+                      const Icon(Icons.edit),
+                      Text(AppLocalizations.of(context)!.editNoteTitle),
                     ],
                   ),
                 ),
-                const PopupMenuItem(
+                PopupMenuItem(
                   value: 'Delete',
                   child: Row(
                     children: [
-                      Icon(Icons.delete),
-                      Text('Delete Note'),
+                      const Icon(Icons.delete),
+                      Text(AppLocalizations.of(context)!.deleteNoteTitle),
                     ],
                   ),
                 ),

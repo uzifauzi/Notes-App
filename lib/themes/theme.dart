@@ -8,7 +8,7 @@ ThemeData lightMode = ThemeData(
   brightness: Brightness.light,
   colorScheme: const ColorScheme.light(
     primary: lightPrimaryColor,
-    onPrimary: Color(0XFFFAF1F1),
+    onPrimary: Color(0XFF181515),
     onPrimaryContainer: Color(0XFFA792F9),
     secondary: Color(0XFF181515),
     onSecondary: Color(0XFF181515),

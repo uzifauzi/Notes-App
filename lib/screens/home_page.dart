@@ -20,12 +20,14 @@ class HomePage extends ConsumerWidget {
       child: Scaffold(
         backgroundColor: Theme.of(context).colorScheme.primary,
         appBar: AppBar(
-          title: Text('Notely',
-              style: Theme.of(context)
-                  .textTheme
-                  .headlineMedium!
-                  .copyWith(color: Theme.of(context).colorScheme.onPrimary)),
-          // backgroundColor: Colors.white,
+          title: Text(
+            'Notely',
+            style: Theme.of(context)
+                .textTheme
+                .headlineMedium!
+                .copyWith(color: Theme.of(context).colorScheme.onPrimary),
+            semanticsLabel: 'Logo Notely',
+          ),
           elevation: 0,
           actions: [
             IconButton(
@@ -67,6 +69,7 @@ class HomePage extends ConsumerWidget {
           },
           child:
               Icon(Icons.add, color: Theme.of(context).colorScheme.onPrimary),
+          tooltip: 'Buka Tambah Catatan',
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       ),

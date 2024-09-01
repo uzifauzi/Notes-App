@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../models/note.dart';
 import '../provider/note_provider.dart';
@@ -18,7 +19,7 @@ class DeleteDialog extends ConsumerWidget {
         style: Theme.of(context).textTheme.titleLarge,
       ),
       content: Text(
-        'Are you sure want to delete this note?',
+        AppLocalizations.of(context)!.deleteConfirmation,
         style: Theme.of(context).textTheme.bodyMedium,
       ),
       actions: [
@@ -27,7 +28,7 @@ class DeleteDialog extends ConsumerWidget {
               Navigator.of(context).pop();
             },
             child: Text(
-              'No',
+              AppLocalizations.of(context)!.cancel,
               style: Theme.of(context)
                   .textTheme
                   .bodySmall!
@@ -41,7 +42,7 @@ class DeleteDialog extends ConsumerWidget {
             style: ElevatedButton.styleFrom(
               backgroundColor: Theme.of(context).colorScheme.error,
             ),
-            child: Text('Delete',
+            child: Text(AppLocalizations.of(context)!.confirmDelete,
                 style: Theme.of(context)
                     .textTheme
                     .bodySmall!
