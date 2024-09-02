@@ -22,7 +22,7 @@ final GoRouter router = GoRouter(
           path: 'detail/:title',
           builder: (context, state) {
             final String title = state.pathParameters['title'] ?? '';
-            final note = notePersons.get(title);
+            final note = boxNotes.get(title);
 
             if (note != null) {
               return NoteDetailPage(note: note);
@@ -38,7 +38,7 @@ final GoRouter router = GoRouter(
           path: 'edit/:title',
           builder: (context, state) {
             final String title = state.pathParameters['title']!;
-            final note = notePersons.get(title); // Ambil note berdasarkan title
+            final note = boxNotes.get(title); // Ambil note berdasarkan title
 
             if (note != null) {
               return EditNotePage(note: note);

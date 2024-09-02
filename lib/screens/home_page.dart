@@ -67,9 +67,9 @@ class HomePage extends ConsumerWidget {
           onPressed: () {
             context.go('/add');
           },
+          tooltip: 'Buka Tambah Catatan',
           child:
               Icon(Icons.add, color: Theme.of(context).colorScheme.onPrimary),
-          tooltip: 'Buka Tambah Catatan',
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       ),

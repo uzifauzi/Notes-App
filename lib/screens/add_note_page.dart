@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:notes_app/provider/note_provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../models/note.dart';
 
@@ -46,14 +47,13 @@ class _AddNotePageState extends ConsumerState<AddNotePage> {
             TextField(
               controller: titleController,
               cursorColor: Theme.of(context).colorScheme.secondary,
-              decoration: const InputDecoration(
-                hintText: 'Untitled',
+              decoration: InputDecoration(
+                hintText: AppLocalizations.of(context)!.noteTitle,
                 border: InputBorder.none,
-                hintStyle: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.grey,
-                ),
+                hintStyle: Theme.of(context)
+                    .textTheme
+                    .headlineSmall!
+                    .copyWith(color: Colors.grey),
               ),
               style: Theme.of(context).textTheme.titleMedium,
             ),
@@ -62,11 +62,11 @@ class _AddNotePageState extends ConsumerState<AddNotePage> {
               child: TextField(
                 controller: contentController,
                 cursorColor: Theme.of(context).colorScheme.secondary,
-                decoration: const InputDecoration(
-                  hintText: 'Start typing...',
+                decoration: InputDecoration(
+                  hintText: AppLocalizations.of(context)!.noteDescription,
                   border: InputBorder.none,
                 ),
-                maxLines: null, // Makes the text field grow with content
+                maxLines: null,
                 keyboardType: TextInputType.multiline,
                 style: Theme.of(context).textTheme.bodyMedium,
               ),

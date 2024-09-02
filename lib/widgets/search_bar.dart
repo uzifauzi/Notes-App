@@ -48,7 +48,6 @@ class _SearchNoteBarState extends ConsumerState<SearchNoteBar> {
             fillColor: Colors.grey[200],
           ),
           onChanged: (query) {
-            // Panggil fungsi pencarian pada provider
             ref.read(noteListProvider.notifier).searchNoteByTitle(query);
           },
         ),

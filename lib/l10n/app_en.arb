@@ -1,5 +1,7 @@
 {
     "searchTitle": "Search",
+    "noteTitle": "Untitled",
+    "noteDescription": "Start typing ..",
     "editNoteTitle": "Edit Note",
     "deleteNoteTitle": "Delete Note",
     "deleteConfirmation": "Are you sure want to delete this note?",

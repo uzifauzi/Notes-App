@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:notes_app/services/note_boxes.dart';
 
 import '../models/note.dart';
+import '../services/note_boxes.dart';
 
 class NoteNotifier extends StateNotifier<List<Note>> {
   NoteNotifier() : super([]) {
@@ -9,22 +9,22 @@ class NoteNotifier extends StateNotifier<List<Note>> {
   }
 
   void loadNotes() {
-    final notes = notePersons.values.toList();
+    final notes = boxNotes.values.toList();
     state = notes;
   }
 
   void addNotes(Note note) {
-    notePersons.put(note.title, note);
+    boxNotes.put(note.title, note);
     loadNotes();
   }
 
   void deleteNote(String title) {
-    notePersons.delete(title);
+    boxNotes.delete(title);
     loadNotes();
   }
 
   void updateNote(Note updatedNote) {
-    notePersons.put(updatedNote.title, updatedNote);
+    boxNotes.put(updatedNote.title, updatedNote);
     loadNotes();
   }
 
@@ -32,7 +32,7 @@ class NoteNotifier extends StateNotifier<List<Note>> {
     if (query.isEmpty) {
       loadNotes(); // Jika query kosong, kembalikan semua note
     } else {
-      state = notePersons.values
+      state = boxNotes.values
           .where(
               (note) => note.title.toLowerCase().contains(query.toLowerCase()))
           .toList();
