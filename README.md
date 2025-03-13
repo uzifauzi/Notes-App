@@ -1,16 +1,42 @@
-# notes_app
+# Notely
 
-A new Flutter project.
+Notely is a simple and efficient note-taking application built using Flutter. This app allows users to create, edit, and delete notes with a clean and intuitive interface. The application is powered by Hive for local storage and Riverpod for state management.
 
-## Getting Started
+## Features ✨
 
-This project is a starting point for a Flutter application.
+### Core Features:
 
-A few resources to get you started if this is your first Flutter project:
+📝 Create Notes: Easily add new notes to store important information.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+✏️ Edit Notes: Modify existing notes effortlessly.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+🗑️ Delete Notes: Remove unwanted notes with a simple action.
+
+### Optional Features:
+
+🌍 Multi-language Support: Available in both English and Indonesian.
+
+🌗 Light & Dark Mode: Choose between light mode and dark mode for better readability.
+
+## Screenshots 📸
+
+Here are some previews of Notely in action:
+
+- Light Mode
+<img src="assets/Screenshot_1737882293.png" alt="drawing" width="200"/>
+
+- Dark Mode
+
+## Tech Stack 🛠️
+
+- Flutter (for UI development)
+- Hive (for local database storage)
+- Riverpod (for state management)
+- GoRouter (for navigation management)
+
+Design Inspiration 🎨
+This app's design is inspired by David Consul. You can check out the original design [here](https://www.figma.com/community/file/1166192037435566473)
+
+
+
+Feel free to contribute, report issues, or give suggestions! 😊
