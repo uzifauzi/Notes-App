@@ -26,6 +26,7 @@ Here are some previews of Notely in action:
 <img src="assets/Screenshot_1737882293.png" alt="drawing" width="200"/>
 
 - Dark Mode
+<img src="assets/Screenshot_1741847045.png" alt="drawing" width="200"/>
 
 ## Tech Stack 🛠️
 
