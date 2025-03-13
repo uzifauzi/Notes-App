@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
+      debugShowCheckedModeBanner: false,
       title: 'Notely',
       theme: lightMode,
       darkTheme: darkMode,
